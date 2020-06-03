@@ -16,3 +16,7 @@ async function start() {
   // Now try and complete the program.
   process.exit();
 }
+
+function randomNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
