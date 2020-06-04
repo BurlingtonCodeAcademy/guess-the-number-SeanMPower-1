@@ -29,9 +29,9 @@ function randomNum(min, max) {
 async function guess() {
   guessCount++;
   
-  let randomGuess = randomNum(min, max);
+  let midGuess = Math.floor((max + min)/2);
   
-  console.log('My guess is: ' + randomGuess);
+  console.log('My guess is: ' + midGuess);
   
   let nailedIt = await ask('Is this correct? (y/n): ');
     if (nailedIt === 'y') {
@@ -40,10 +40,10 @@ async function guess() {
     } else if (nailedIt === 'n') {
       let highLow = await ask('Is it higher or lower? (h/l): ');
       if (highLow === 'h') {
-        min = randomGuess + 1;
+        min = midGuess + 1;
         guess();
       } else if (highLow === 'l') {
-        max = randomGuess -1;
+        max = midGuess -1;
         guess();
       }
     }
