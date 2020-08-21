@@ -18,9 +18,9 @@ let randomNum = Math.floor(Math.random() * randomMax);
 // Initialize //////////////////////////////////////////////////////////////////////
 async function start() {
   console.log(
-    "\nWelcome! Let us play some number guessing games! \nEnter 1 if you want to guess first. \nEnter 2 if you want me to guess first."
+    "\nWelcome! Let us play some number guessing games! \n\nEnter 1 if you want to guess first. \n\nEnter 2 if you want me to guess first."
   );
-  let selectGame = await ask(`(1 or 2?): `);
+  let selectGame = await ask(`\n(1 or 2?): `);
 
   if (selectGame === "1") {
     guessCount = 0;
